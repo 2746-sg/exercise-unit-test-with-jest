@@ -1,13 +1,31 @@
+
+const { fromEuroToDollar, fromDollarToYen , fromYentoPound} = require('./app.js');
+
+
 test("One euro should be 1.07 dollars", function() {
-    // Importo la funcion desde app.js
-    const { fromEuroToDollar, fromDollarToYen , fromYentoPound} = require('./app.js');
 
-    // Uso la función como debe ser usada
-    const dollars = fromEuroToDollar(3.5),fromDollarToYen(156,5), fromYentoPound(0,87);
+    const dollars = fromEuroToDollar(3.5);
 
-    // Si 1 euro son 1.07 dólares, entonces 3.5 euros debe ser (3.5 * 1.07)
-    const expected = 3.5 * 1.07; 1.07 *156.5; 156.5 *0.87; 
-    // Hago mi comparación (la prueba)
-    expect(fromEuroToDollar(3.5)).toBe(3.745); // 1 euro son 1.07 dólares, entonces 3.5 euros deberían ser = (3.5 * 1.07)
+    const expected = 3.5 * 1.07; 
+   
+    expect (dollars).toBe(expected); 
+
+})
+test("One euro should be 1.07 dollars", function() {
+    
+    const euro = fromDollarToYen(3.5);
+
+    const expected = 1.07* 156.5;  
+   
+    expect(fromDollarToYen).toBe(expected);
+
+})
+test("One euro should be 1.07 dollars", function() {
+    
+    const Yen = fromYentoPound(3.5);
+
+    const expected = 156.5 * 0.87; 
+   
+    expect(fromYentoPound).toBe(expected);
 
 })
